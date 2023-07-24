@@ -1,6 +1,7 @@
 <img align="right" src="./logo-small.png">
 
 # Lab: Reverting Commits and Rewriting History
+
 In this lab, we will cover the following recipes:
 
 - Undo – Remove a commit completely

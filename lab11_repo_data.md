@@ -733,49 +733,13 @@ commit 4c638be79fde7c34ca0fcaad13d7c4f1d9c5ddd2
     Bug: 405672
 ```
 
- 
-
- 
-
- 
-
- 
-
 5.  So, what we have here is a nice list of the bugs being fixed and
     their corresponding commit hashes.
 
-### How it works...
-
-We are using some Bash tools to get this list of fixed bugs. I will
-briefly explain what they are doing in this section:
-
--   The `xargs -n1 git log -1` part will execute
-    `git log -1` on each commit coming from the first
-    `git log` command,
-    `git log --format=format:%h --regexp-ignore-case --extended-regexp --grep="bug: [0-9]{6}" v2.3.1.201302201838-r..v3.0.0.201305080800-m7` .
--   The `grep --ignore-case -E "commit [0-9a-f]{40}|bug:"` 
-    part will ignore the case in the regular expression and
-    `-E` will enable an extended regular expression. You might
-    see that a lot of these options for the tool grep are the same
-    options we have for git log. The regular expression is matching
-    commit and 40 characters with the `[0-9a-f]` range or bug.
-    The `|` character means or. Remember we are in the output
-    from `git log -1` .
-
-All of this information we have extracted is the basis for a good, solid
-release note, with information on what has changed from one release to
-another.
-
-The next natural step would be to look into the bug tracking system and
-also list the titles for each error being fixed in the commits. However,
-that is not something we will go through here as it all depends on the
-system you are using.
 
 
 Finding what has been achieved in the repository in the last period
 -------------------------------------------------------------------
-
-* * * * *
 
 Sometimes it's useful to be able to extract what has been achieved in a
 specific range of time. Let's see how `git log` numerous
