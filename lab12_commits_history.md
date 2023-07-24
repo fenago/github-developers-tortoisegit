@@ -941,23 +941,24 @@ $ git log --oneline
 We can take a closer look at the two commits with `git show` 
 if we want a closer investigation of what happened.
 
-### How it works...
 
-The `git revert` command applies the anti-patch of the commit
-in question to the current `HEAD` pointer. It will generate a
-new commit with the anti-patch and a commit message that describes the
-reverted commit(s).
+#### Git reset with TortoiseGit
 
-### There's more...
+The reset dialog can be used to reset the current HEAD to the specified state and optionally also the index and the working tree. This can also be used to abort a merge.
 
-It's possible to revert more than one commit in a single revert, for
-example, `git revert master~6..master~2` will revert the
-commits from the sixth commit from the bottom in the master to the third
-commit from the bottom in the master (both included).
+**The Reset dialog**
 
-It is also possible not to create a commit while reverting; passing the
-`-n` option to `git revert` will apply the needed
-patched, but only to the working tree and the staging area.
+![](./images/36.png)
 
+**The Abort Merge dialog**
 
+![](./images/37.png)
+
+On the Reset dialog, you can click `...` to browse the log and choose a specific version. In Abort merge dialog, you can only reset to HEAD.
+
+`Soft: Leave working tree and index untouched` Does not touch the index file nor the working tree at all (but resets the head to the selected commit, just like all modes do). This leaves all your changed files "Changes to be committed" as before. This option is not available in Abort Merge dialog.
+
+`Mixed: Leave working tree untouched`, reset index Resets the index but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the git default action. This option can abort a merge.
+
+`Hard: Reset working tree and index (discard all local changes)` Resets the index and working tree. Any changes to tracked files in the working tree since the selected commit are discarded. This option can abort a merge, and it is the default action in Abort Merge dialog.
 

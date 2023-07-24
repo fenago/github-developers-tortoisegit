@@ -1,5 +1,5 @@
 
-## Lab : Compare local changes to the repository
+## Lab : Compare Local Changes using TortoiseGit
 
 **Browse All Refs**
 
