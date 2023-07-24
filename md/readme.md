@@ -18,7 +18,7 @@ Labs for this course are available at path shared below.
 7. Resolving Merge Conflicts
 8. Compare Local Changes using TortoiseGit
 9. Create and switch branches using TortoiseGit
-10. GitHub Organization
+10. Finding the bug in your project
 11. Extracting Data from the Repository
 12. Reverting Commits and Rewriting History
 13. Communicate using Markdown
